@@ -41,8 +41,6 @@ function App() {
 
     let zip = new JSZip();
     fileList.forEach(async file => {
-      // const byte = await getAsByteArray(file);
-      // console.log(byte);
       zip.file(file.name, file, {binary: true});
     })
     const content =  await zip.generateAsync({type: "base64"})
