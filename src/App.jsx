@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
 import JSZip from "jszip";
-import FileSaver from 'file-saver';
 
 
 import { 
@@ -21,20 +18,6 @@ import 'antd/dist/antd.css';
 function App() {
   const [fileList, setFileList] = useState([]);
   const [uploading, setUploading] = useState(false);
-  
-  function getAsByteArray(file) {
-    return new Promise((resolve, reject) => {
-      // Create file reader
-      let reader = new FileReader()
-  
-      // Register event listeners
-      reader.addEventListener("loadend", e => resolve(e.target.result))
-      reader.addEventListener("error", reject)
-  
-      // Read file
-      reader.readAsArrayBuffer(file)
-    })
-  }
 
   const handleUpload = async() => {
     setUploading(true);
