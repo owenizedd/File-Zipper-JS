@@ -54,7 +54,7 @@ function App() {
     multiple: true,
     onRemove: file => {
         const index = fileList.indexOf(file);
-        const newFileList = state.fileList.slice();
+        const newFileList = fileList.slice();
         newFileList.splice(index, 1);
         setFileList(newFileList);
     },
